@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Azahar - Premium Services and Appointments">
+    <meta name="description" content="Azahar - Browse Our Services">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
-    <title>Azahar - Home</title>
+    <title>Azahar - Services</title>
     <link rel="stylesheet" href="styles.css">
     <script src="js/main.js" defer></script>
+    <script src="js/services.js" defer></script>
     <script src="js/auth.js" defer></script>
 </head>
 <body>
@@ -18,8 +19,8 @@
                 <a href="index.html">Azahar</a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="reservations.html">Reservations</a></li>
                 <li><a href="account.html">Account</a></li>
                 <li class="cart-icon">
@@ -50,50 +51,25 @@
     </nav>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to Azahar</h1>
-                <p>Experience premium services with personalized care</p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn-primary">Browse Services</a>
-                    <a href="reservations.html" class="btn-secondary">Book Now</a>
-                </div>
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Choose from our premium selection of services</p>
             </div>
         </section>
 
-        <section class="features">
+        <section class="services-section">
             <div class="container">
-                <h2>Why Choose Us</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Quality Services</h3>
-                        <p>Professional and personalized care for every client</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⭐</div>
-                        <h3>Rewards Program</h3>
-                        <p>Earn points with every appointment and get exclusive benefits</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h3>Easy Booking</h3>
-                        <p>Simple and secure online reservation system</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Secure Platform</h3>
-                        <p>Your data and payments are protected with advanced security</p>
-                    </div>
+                <div class="filters">
+                    <button class="filter-btn active" data-category="all">All Services</button>
+                    <button class="filter-btn" data-category="hair">Hair</button>
+                    <button class="filter-btn" data-category="nails">Nails</button>
+                    <button class="filter-btn" data-category="spa">Spa</button>
+                    <button class="filter-btn" data-category="beauty">Beauty</button>
                 </div>
-            </div>
-        </section>
 
-        <section class="cta">
-            <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p>Create an account today and start earning rewards</p>
-                <button id="ctaRegisterBtn" class="btn-primary">Create Account</button>
+                <div class="services-grid" id="servicesGrid">
+                </div>
             </div>
         </section>
     </main>

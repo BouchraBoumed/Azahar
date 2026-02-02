@@ -1,0 +1,17 @@
+{
+  "name": "azahar-website",
+  "version": "1.0.0",
+  "description": "Azahar booking system",
+  "main": "start-website.js",
+  "scripts": {
+    "start": "node start-website.js",
+    "backend": "cd back-end && npm start",
+    "dev": "node start-website.js"
+  },
+  "keywords": ["booking", "appointments"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

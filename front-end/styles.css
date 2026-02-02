@@ -1,0 +1,958 @@
+:root {
+    --primary-color: #8B4789;
+    --secondary-color: #D4A5D4;
+    --accent-color: #FFB6C1;
+    --dark-color: #2C1B2E;
+    --light-color: #F8F4F9;
+    --text-color: #333;
+    --border-color: #E0D4E0;
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon svg {
+    stroke-width: 2;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.user-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.user-menu span {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #6F3A6D;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.hero-buttons .btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.hero-buttons .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.features {
+    padding: 4rem 0;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.cta {
+    background-color: var(--secondary-color);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.services-section {
+    padding: 3rem 0;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: white;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.service-content {
+    padding: 1.5rem;
+}
+
+.service-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.service-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-duration {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+}
+
+.reservation-section {
+    padding: 3rem 0;
+}
+
+.reservation-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.cart-summary {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.cart-summary h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.cart-total {
+    border-top: 2px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.cart-total h3 {
+    color: var(--primary-color);
+}
+
+.reservation-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.reservation-form-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.payment-option {
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.payment-option input[type="radio"]:checked + .payment-card {
+    border-color: var(--primary-color);
+    background-color: var(--light-color);
+}
+
+.payment-card:hover {
+    border-color: var(--primary-color);
+}
+
+.payment-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.payment-details {
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.payment-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.points-info {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.points-info p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.account-section {
+    padding: 3rem 0;
+}
+
+.login-prompt {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.login-prompt h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.account-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.account-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.profile-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+    color: #666;
+}
+
+.points-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.points-display {
+    margin: 1rem 0;
+}
+
+.points-number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+.points-label {
+    font-size: 1rem;
+}
+
+.points-info {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.account-nav {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.account-nav-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background: white;
+    color: var(--text-color);
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.account-nav-btn:last-child {
+    border-bottom: none;
+}
+
+.account-nav-btn:hover,
+.account-nav-btn.active {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+.account-main {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.account-tab {
+    display: none;
+}
+
+.account-tab.active {
+    display: block;
+}
+
+.account-tab h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.appointment-card {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.appointment-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.appointment-date {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.appointment-status {
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-completed {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-upcoming {
+    background-color: #2196F3;
+    color: white;
+}
+
+.status-cancelled {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.appointment-services {
+    margin-bottom: 1rem;
+}
+
+.appointment-services h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.appointment-services ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.appointment-services li {
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.appointment-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.appointment-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.appointment-image:hover {
+    transform: scale(1.05);
+}
+
+.appointment-total {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+.profile-form {
+    margin-bottom: 3rem;
+}
+
+.password-section {
+    border-top: 2px solid var(--border-color);
+    padding-top: 2rem;
+}
+
+.password-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+}
+
+.auth-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.auth-form button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.auth-form p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-form a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.cart-item-price {
+    font-weight: bold;
+}
+
+.remove-item {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.remove-item:hover {
+    opacity: 0.8;
+}
+
+.image-modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.image-modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        position: static;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .account-content {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
